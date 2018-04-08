@@ -9,8 +9,13 @@ const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'GET_MOVIES':
 			return {
+				...action.payload,
+				loading: false
+			};
+		case 'LOADING':
+			return {
 				...state,
-				...action.payload
+				loading: true
 			};
 
 		default:

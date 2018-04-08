@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const mainRequest = (page = 1) => dispatch => {
+export const getMovies = (page = 1) => dispatch => {
+	dispatch({
+		type: 'LOADING'
+	});
 	axios
 		.get(`https://api.themoviedb.org/4/discover/movie?sort_by=vote_average.desc&page=${page}`, {
 			headers: {
@@ -22,5 +25,3 @@ const mainRequest = (page = 1) => dispatch => {
 		})
 		.catch(err => console.log(err));
 };
-
-export const getMovies = page => mainRequest(page);
