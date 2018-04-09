@@ -1,0 +1,15 @@
+.list .movie {
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.ui.modal.transition.visible.active {
+	margin: 100px auto !important;
+}
+
+@media (max-width: 768px) {
+	.ui.grid > [class*='two column'].row > .column {
+		width: 100% !important;
+	}
+}

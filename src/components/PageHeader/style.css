@@ -1,0 +1,23 @@
+.page-header {
+	height: 350px;
+}
+
+.logo img {
+	width: 100px;
+	margin-top: 10px;
+}
+
+.ui.right.floated.header {
+	font-size: 18px;
+}
+
+.header-cover {
+	height: 270px;
+	background: url('../../img/movies-header.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.page-header__top {
+	height: 80px;
+	background-color: #fff;
+}

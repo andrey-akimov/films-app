@@ -1,0 +1,9 @@
+.app {
+	height: 75vh;
+}
+
+.spinner {
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 25vh;
+}

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import { getMovies } from '../../store/actions/index.js';
 import './style.css';
-import Header from '../../components/Header/index';
+import PageHeader from '../../components/PageHeader/index';
 import List from '../List/index';
 
 class App extends Component {
@@ -12,23 +13,16 @@ class App extends Component {
 	}
 
 	render() {
-		const { page, totalPages } = this.props;
 		return (
 			<div className="App">
-				<Header />
-				{this.props.loading ? <h1>loading...</h1> : <List movies={this.props.movies} />}
-
-				{/* Pagination */}
-				{page > 1 ? (
-					<button onClick={() => this.props.dispatch(getMovies(this.props.page - 1))}>
-						Prev
-					</button>
-				) : null}
-				{page < totalPages ? (
-					<button onClick={() => this.props.dispatch(getMovies(this.props.page + 1))}>
-						Next
-					</button>
-				) : null}
+				<PageHeader />
+				{this.props.loading ? (
+					<Dimmer active>
+						<Loader size="massive">Loading</Loader>
+					</Dimmer>
+				) : (
+					<List {...this.props} />
+				)}
 			</div>
 		);
 	}
